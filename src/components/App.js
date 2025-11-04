@@ -54,13 +54,13 @@ function App() {
         {users.map((user) => (
           <li key={user.id}>
             <a
-              href={/users/${user.id}}
+              href={`/users/${user.id}`}
               onClick={(e) => {
                 e.preventDefault();
                 // ✅ setLoading and force re-render before fetching
                 setLoading(true);
                 setTimeout(() => {
-                  fetch(https://jsonplaceholder.typicode.com/users/${user.id})
+                  fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
                     .then((res) => res.json())
                     .then((data) => {
                       setSelectedUser(data);
@@ -78,4 +78,7 @@ function App() {
   );
 }
 
-export default App;
+export default App;
+
+
+
